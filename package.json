@@ -1,0 +1,48 @@
+{
+  "name": "optim-corp/passport-cios",
+  "version": "1.0.0",
+  "description": "CIOS authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "cios",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "author": {
+    "name": "yusuke.aoki",
+    "email": "yusuke.aoki@optim.co.jp",
+    "url": "https://optim.co.jp/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/optim-corp/passport-cios"
+  },
+  "bugs": {
+    "url": "https://github.com/optim-corp/passport-cios/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-oauth2": "1.x.x"
+  },
+  "devDependencies": {
+    "make-node": "0.4.6",
+    "mocha": "2.x.x",
+    "chai": "2.x.x",
+    "chai-passport-strategy": "1.x.x"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}
