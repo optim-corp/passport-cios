@@ -13,7 +13,7 @@ Use Express
 ```js
 const passport = require("passport")
 const session = require("express-session")
-const CIOSStrategy = require("@optim/passport-cios")
+const CIOSStrategy = require("passport-cios")
 
 /**
  * Inisialize
