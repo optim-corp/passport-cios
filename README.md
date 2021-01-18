@@ -16,7 +16,7 @@ npm install --save optim-corp/passport-cios
 
 ## Usage
 
-Use Express
+Use Express Examples
 
 ```js
 const passport = require("passport")
@@ -88,6 +88,88 @@ app.get("/logout", (req, res)=>{
 
 
 ```
+
+### CIOS Strategy
+
+Read passport strategy with require statement.
+
+```js
+const CIOSStrategy = require("passport-cios")
+```
+
+Set `CIOSStrategy` constructor with specified arguments.
+
+```js
+passport.use(new CIOSStrategy({
+        clientID: env.client_id,           
+        clientSecret: env.client_secret,    
+        callbackURL: env.redirect_url,      
+        scope: env.scope, 
+        authorizationURL: "https://" + env.cios_auth_uri + "/connect/authorize",
+        tokenURL: "https://" + env.cios_auth_uri + "/connect/token",    
+        profileURL: "https://" + env.cios_account_uri + "/v2/me",
+        },
+    (accessToken, refreshToken, res, profile, cb) => {
+        return cb(null, res)
+    }
+))
+```
+
+#### First argument
+
+Type: Object
+
+|ParamsName|description|required|default|
+|---|---|---|---|
+|clientID|CIOS OAuth Client ID|✅||
+|clientSecret|CIOS OAuth Client Secret|✅||
+|callbackURL| App Redirect URL (ex: http://localhost:8080/oauth2/callback)|✅||
+|scope|CIOS Scopes|✅||
+|authorizationURL|CIOS Aurhorization URL||`https://auth.optim.cloud/connect/authorize`|
+|tokenURL|CIOS Aurhorization Token URL||`https://auth.optim.cloud/connect/token`|
+|profileURL|CIOS Get me URL||`https://accounts.optimcloudapis.com/v2/me`|
+
+#### Second argument
+
+Type: Callback function
+
+```js    
+(accessToken, refreshToken, res, profile, cb) => {
+    return cb(null, res)
+}
+```
+
+|argument number|argument name|description|
+|---|---|---|
+|1|accessToken|Return CIOS accessToken|
+|2|refreshToken|Return CIOS refreshToken|
+|3|res|Return userdata and httpResponse|
+|4|profile|Return getMe response|
+|5|cb|passport callback function|
+
+
+
+#### Apply node express
+
+Wrtie serialize and deserialize logic.
+
+```js
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+```
+
+Apply app.
+
+```js
+app.use(passport.initialize())
+app.use(passport.session());
+```
+
 
 ## How to Support
 
