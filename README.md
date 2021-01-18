@@ -151,7 +151,7 @@ Type: Callback function
 
 #### Apply node express
 
-Wrtie serialize and deserialize logic.
+Write serialize and deserialize logic.
 
 ```js
 passport.serializeUser(function(user, done) {
