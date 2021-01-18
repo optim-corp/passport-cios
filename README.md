@@ -1,6 +1,6 @@
 # passport-cios
 
-[Passport](http://passportjs.org/) strategy for authenticating with [OPTiM Cloud IoT OS](https://www.optim.cloud/).
+[Passport](http://passportjs.org/) strategy for authenticating with [OPTiM Cloud IoT OS (CIOS)](https://www.optim.cloud/).
 
 This module lets you authenticate using OPTiM Cloud IoT OS in your Node.js applications.
 By plugging into Passport, OPTiM Cloud IoT OS authentication can be easily and
@@ -88,6 +88,10 @@ app.get("/logout", (req, res)=>{
 
 
 ```
+
+## How to Support
+
+If you have any issues or questions, please raise them on [Github issues](https://github.com/optim-corp/passport-cios/issues).
 
 ## License
 
