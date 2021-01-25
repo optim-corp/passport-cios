@@ -1,5 +1,5 @@
 {
-  "name": "passport-cios",
+  "name": "@optim-corp/passport-cios",
   "version": "1.0.0",
   "description": "CIOS authentication strategy for Passport.",
   "keywords": [
